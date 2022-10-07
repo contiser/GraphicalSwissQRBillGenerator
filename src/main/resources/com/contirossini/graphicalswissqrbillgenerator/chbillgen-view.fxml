@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+<VBox alignment="TOP_CENTER" prefHeight="603.0" prefWidth="732.0" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.contirossini.graphicalswissqrbillgenerator.WindowController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to SwissQRBillGenerator!" wrappingWidth="189.57617568969727" />
+
+   <SplitPane dividerPositions="0.3186349693251533" prefHeight="439.0" prefWidth="681.0">
+     <items>
+       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="254.0" prefWidth="152.0">
+            <children>
+               <Text layoutX="4.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Receiver's IBAN:" wrappingWidth="163.20000000000005" />
+               <Text layoutX="4.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount in CHF:" wrappingWidth="163.20000000000005" />
+               <Text layoutX="4.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Debtor's information" underline="true" wrappingWidth="163.20000000000005" />
+               <Text layoutX="4.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First and Last name:" wrappingWidth="163.20000000000005" />
+               <Text layoutX="4.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Street and street number:" wrappingWidth="163.20000000000005" />
+               <Text layoutX="3.0" layoutY="296.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postcode and city:" wrappingWidth="163.20000000000005" />
+               <Text layoutX="3.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Communication:" wrappingWidth="163.20000000000005" />
+               <Text layoutX="4.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creditor's information" underline="true" wrappingWidth="163.20000000000005" />
+               <Text layoutX="4.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First and Last name:" wrappingWidth="163.20000000000005" />
+               <Text layoutX="4.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Street and street number:" wrappingWidth="163.20000000000005" />
+               <Text layoutX="3.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postcode and city:" wrappingWidth="163.20000000000005" />
+            </children>
+         </AnchorPane>
+       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="467.0">
+            <children>
+               <TextField id="iban" fx:id="iban" layoutX="21.0" layoutY="14.0" prefHeight="26.0" prefWidth="321.0" text="Receiver's IBAN" />
+               <TextField id="amount" fx:id="amount" layoutX="21.0" layoutY="47.0" prefHeight="26.0" prefWidth="321.0" text="Amount" />
+               <TextField id="message" fx:id="message" layoutX="21.0" layoutY="80.0" prefHeight="26.0" prefWidth="321.0" text="Message to the receiver" />
+               <TextField id="creditorFLName" fx:id="creditorFLName" layoutX="21.0" layoutY="134.0" prefHeight="16.0" prefWidth="322.0" text="Who will receive the money" />
+               <TextField id="creditorStreet" fx:id="creditorStreet" layoutX="21.0" layoutY="159.0" prefHeight="16.0" prefWidth="322.0" text="Street, no." />
+               <TextField id="creditorLocation" fx:id="creditorLocation" layoutX="21.0" layoutY="184.0" prefHeight="16.0" prefWidth="322.0" text="Postcode, city" />
+               <TextField id="debtorFLName" fx:id="debtorFLName" layoutX="21.0" layoutY="234.0" prefHeight="16.0" prefWidth="322.0" text="Who will pay you money" />
+               <TextField id="debtorStreet" fx:id="debtorStreet" layoutX="21.0" layoutY="259.0" prefHeight="16.0" prefWidth="322.0" text="Street, no." />
+               <TextField id="debtorLocation" fx:id="debtorLocation" layoutX="21.0" layoutY="284.0" prefHeight="16.0" prefWidth="322.0" text="Postcode, city" />
+            </children>
+         </AnchorPane>
+     </items>
+   </SplitPane>
+    <Button alignment="BOTTOM_CENTER" onAction="#onSubmit" text="Generate QR-Bill" />
+</VBox>
