@@ -12,6 +12,7 @@ public class BillGenerator {
     public static void main(String[] args) {
         SwissQRBillGenerator.main(args);
     }
+
     public static void GenerateBill(String iban, String amount, String creditorNameLastName, String creditorAddressLine1, String creditorAddressLine2, String communication, String debtorNameLastName, String debtorAddressLine1, String debtorAddressLine2, String saveToFile) {
         // Setup bill
         Bill bill = new Bill();
@@ -40,18 +41,18 @@ public class BillGenerator {
 
         // Set output format
         BillFormat format = bill.getFormat();
-        format.setGraphicsFormat(GraphicsFormat.SVG);
+        format.setGraphicsFormat(GraphicsFormat.PDF);
         format.setOutputSize(OutputSize.A4_PORTRAIT_SHEET);
         format.setLanguage(Language.IT);
 
         // Generate QR bill
-        byte[] svg = QRBill.generate(bill);
+        byte[] generated = QRBill.generate(bill);
 
         // Save QR bill
 
         Path path = Paths.get(saveToFile);
         try {
-            Files.write(path, svg);
+            Files.write(path, generated);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
             alert.setHeaderText(null);

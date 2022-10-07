@@ -22,8 +22,8 @@ public class WindowController {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setInitialFileName("qrbill");
         File selectedFile = fileChooser.showSaveDialog(SwissQRBillGenerator.getScene().getWindow());
-        if (!selectedFile.toString().endsWith(".svg")) {
-            selectedFile = new File(selectedFile.toString() + ".svg");
+        if (!selectedFile.toString().endsWith(".pdf")) {
+            selectedFile = new File(selectedFile + ".pdf");
         }
         BillGenerator.GenerateBill(iban.getText(), amount.getText(), creditorFLName.getText(), creditorStreet.getText(),
                 creditorLocation.getText(), message.getText(), debtorFLName.getText(), debtorStreet.getText(),
