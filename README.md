@@ -9,7 +9,4 @@ If you still don't have it download the installer from here: https://www.oracle.
 
 ![Screenshot_Graphical_Swiss_QR_Bill_Generator](https://github.com/contiser/GraphicalSwissQRBillGenerator/blob/master/Screenshot.png?raw=true)
 
-Remarks
-1) At the moment I concentrated myself on making a very simple version, errors are still not displayed, if no document is generated check if the IBAN is correct and if the amount is a valid number.
-2) The generator currently only supports normal IBAN numbers, the only difference is that if you'd like to use a QR IBAN then a reference code would be needed, which private users usually don't have, so I skipped that feature by now.
 Improvements may arrive soon...
