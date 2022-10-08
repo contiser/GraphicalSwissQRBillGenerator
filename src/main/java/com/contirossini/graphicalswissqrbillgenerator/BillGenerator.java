@@ -9,11 +9,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class BillGenerator {
+    // Small hack to allow shader plugin to make a JAR for a JavaFX Application
     public static void main(String[] args) {
         SwissQRBillGenerator.main(args);
     }
 
-    public static void GenerateBill(String iban, String amount, String creditorNameLastName, String creditorAddressLine1, String creditorAddressLine2, String communication, String debtorNameLastName, String debtorAddressLine1, String debtorAddressLine2, String saveToFile) {
+    public static void GenerateBill(String iban, String amount, String creditorNameLastName, String creditorAddressLine1, String creditorAddressLine2, String communication, String debtorNameLastName, String debtorAddressLine1, String debtorAddressLine2, String qrReference , String saveToFile) {
         // Setup bill
         Bill bill = new Bill();
         bill.setAccount(iban);
@@ -38,6 +39,11 @@ public class BillGenerator {
         debtor.setAddressLine2(debtorAddressLine2);
         debtor.setCountryCode("CH");
         bill.setDebtor(debtor);
+
+        if(qrReference.length()>0 && Payments.isValidQRReference(qrReference)){
+            bill.setReferenceType("QRR");
+            bill.setReference(qrReference);
+        }
 
         // Set output format
         BillFormat format = bill.getFormat();
